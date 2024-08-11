@@ -32,10 +32,14 @@ const productSchema = new Schema({
         type: String,
         required: [true, 'Description is required!']
     },
-    image: {
+    image: [{
         type: String,
         default: 'https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png'
-    }
+    }],
+    // image: {
+    //     type: String,
+    //     default: 'https://www.pngitem.com/pimgs/m/150-1503945_transparent-user-png-default-user-image-png-png.png'
+    // }
 })
 
 const productModel = mongoose.model('product', productSchema);

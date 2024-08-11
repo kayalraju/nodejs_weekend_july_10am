@@ -16,9 +16,15 @@ class productController {
                 })
             } else {
                 const Adddata = new productModel(value);
-                if(req.file){
-                    Adddata.image = req.file.filename;
-                }
+                // if(req.file){
+                //     Adddata.image = req.file.filename;
+                // }
+                const fileName = req.file.filename
+                const basePath = `${req.protocol}://${req.get('host')}/uploads/`;
+                const image= `${basePath}${fileName}`
+                 if(req.file){
+                    Adddata.image = image
+                 }
                 const resp = await Adddata.save();
                 return res.status(200).json({
                     message: 'Product added successfully',
