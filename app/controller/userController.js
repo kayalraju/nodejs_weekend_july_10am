@@ -26,7 +26,7 @@ class userController{
     }
 
     async register(req,res){
-        console.log(req.body);
+        //console.log(req.body);
         
         try {
             const user = new UserModel({

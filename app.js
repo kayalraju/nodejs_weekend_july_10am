@@ -32,6 +32,9 @@ const userRouter=require('./Router/user.js');
 app.use(userRouter);
 app.use('/api', productRouter);
 
+const AuthApiRoute=require('./Router/apiRouter.js')
+app.use('/api',AuthApiRoute)
+
 const PORT = process.env.PORT || 5200;
 
 app.listen(PORT, ()=>{
